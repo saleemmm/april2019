@@ -1,0 +1,21 @@
+{
+  "name": "saleem-project",
+  "description": "hello",
+  "main": "server.js",
+  "authors": [
+    "saleem"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-route": "^1.6.9"
+  }
+}

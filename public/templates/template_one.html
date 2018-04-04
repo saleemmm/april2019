@@ -1,0 +1,74 @@
+<form class="form-horizontal"  role="form"  name="myForm">
+
+    <div class="form-group">
+        <label for="inputfirstName3" class="col-sm-2 control-label">firstName</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text"
+                   name="fname"
+                   ng-minlength="3"
+                   ng-maxlength="6"
+                   required id="inputfirstName3" placeholder="firstName" ng-model="formInfo.firstName">
+        </div>
+    </div>
+    <h5 style="color: red" ng-if="myForm.fname.$error.minlength">Minimum 3 characters are required</h5>
+    <h5 style="color: red" ng-if="myForm.fname.$error.maxlength">Maximum 6 characters are Allowed</h5>
+    <h5 style="color: red" ng-if="myForm.fname.$error.required && myForm.fname.$dirty">can't Left Blank</h5>
+
+    <div class="form-group">
+        <label for="inputlasttName3" class="col-sm-2 control-label">lastName</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text"
+                   name="lname"
+                   ng-minlength="3"
+                   ng-maxlength="6"
+                   required id="inputlasttName3" placeholder="firstName" ng-model="formInfo.lastName">
+        </div>
+    </div>
+    <h5 style="color: red" ng-if="myForm.lname.$error.minlength">Minimum 6 characters are required</h5>
+    <h5 style="color: red" ng-if="myForm.lname.$error.maxlength">Maximum 10 characters are Allowed</h5>
+    <h5 style="color: red" ng-if="myForm.lname.$error.required && myForm.lname.$dirty">Can't Left Blank</h5>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="email"
+                   ng-model="uemail"
+                   name="uemail"
+                   required id="inputEmail3" placeholder="Email" ng-model="formInfo.Email">
+        </div>
+    </div>
+    <h5 style="color: red" ng-if="myForm.uemail.$error.required && myForm.uemail.$dirty">Can't Left Blank</h5>
+    <h5 style="color: red" ng-if="myForm.uemail.$error.email">Please Enter The Valid Email</h5>
+
+
+    <div class="form-group">
+        <label for="inputnumber3" class="col-sm-2 control-label">moblie no</label>
+        <div class="col-sm-4">
+            <input class="form-control"
+                   type="text"
+                   ng-model="uphone"
+                   name="uphone"
+                   ng-pattern="/^\d{0,9}(\.\d{1,9})?$/"
+                   required id="inputnumber3" placeholder="number" ng-model="formInfo.numbr" ng-pattern="ph_numbr">
+        </div>
+        <h5 style="color: red" ng-if="myForm.uphone.$error.required && myForm.uphone.$dirty">Can't Left Blank</h5>
+        <h5 style="color: red" ng-if="myForm.uphone.$error.pattern">Please Enter Valid Phone Number</h5>
+
+
+
+        <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+
+            <button type="submit" ng-click="saveData()" class="btn btn-success">register</button>
+        </div>
+    </div>
+    </div>
+
+
+
+    <span ng-show="firstNameRequired">{{firstNameRequired}}</span>
+    <span ng-show="lastNameRequired">{{lastNameRequired}}</span>
+    <span ng-show="emailRequired">{{emailRequired}}</span>
+    <span ng-show="ph_numbrRequired">{{ph_numbrRequired}}</span>
+
+
+</form>

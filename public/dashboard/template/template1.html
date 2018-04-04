@@ -1,0 +1,17 @@
+<h1>Password Verification</h1>
+<form name="pw" ng-controller="set_controller">
+    <p>
+        <label for="password">New Password
+            <input type="password" name="user_password" ng-model="user_password" ng-required="confirm_password && !user-password" password-verify="confirm_pasword">
+    <p ng-show="pw.user_password.$error.passwordVerify">Passwords do not match</p>
+    <p ng-show="pw.user_password.$error.required">This field is required</p>
+    </label>
+    </p>
+    <p>
+        <label for="password">Confirm Password
+            <input type="password" name="confirm_password" ng-model="confirm_password" ng-required="user_password && !confirm_password" password-verify="user_password">
+    <p ng-show="pw.confirm_password.$error.passwordVerify">Passwords do not match</p>
+    <p ng-show="pw.confirm_password.$error.required">This field is required</p>
+    </label>
+    </p>
+</form>
